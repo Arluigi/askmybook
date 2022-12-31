@@ -1,28 +1,21 @@
+import dotenv
 from dotenv import load_dotenv
 import os
-
-# Use load_env to trace the path of .env:
-load_dotenv('.env')
-
 import pandas as pd
 from typing import Set
 from transformers import GPT2TokenizerFast
 import argparse, sys
-
 import numpy as np
-
 from PyPDF2 import PdfReader
-
-import pandas as pd
 import openai
 import csv
-import numpy as np
-import os
 import pickle
-from transformers import GPT2TokenizerFast
 
-openai.api_key = os.environ["OPENAI_API_KEY"]
+# Use load_env to trace the path of .env:
+load_dotenv('.env')
 
+#openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = "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"
 COMPLETIONS_MODEL = "text-davinci-003"
 
 MODEL_NAME = "curie"

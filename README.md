@@ -5,7 +5,7 @@
 2. Turn your PDF into embeddings for GPT-3:
 
 ```
-python scripts/pdf_to_pages_embeddings.py --pdf book.pdf
+python3 scripts/pdf_to_pages_embeddings.py --pdf 1984.pdf
 ```
 
 3. Set up database tables:

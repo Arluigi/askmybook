@@ -10,12 +10,13 @@ import pandas as pd
 import openai
 import numpy as np
 
-from resemble import Resemble
+#from resemble import Resemble
 
 import os
 
-Resemble.api_key(os.environ["RESEMBLE_API_KEY"])
-openai.api_key = os.environ["OPENAI_API_KEY"]
+#Resemble.api_key(os.environ["RESEMBLE_API_KEY"])
+#openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = "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"
 
 COMPLETIONS_MODEL = "text-davinci-003"
 
@@ -161,8 +162,8 @@ def ask(request):
         previous_question.save()
         return JsonResponse({ "question": previous_question.question, "answer": previous_question.answer, "audio_src_url": audio_src_url, "id": previous_question.pk })
 
-    df = pd.read_csv('book.pdf.pages.csv')
-    document_embeddings = load_embeddings('book.pdf.embeddings.csv')
+    df = pd.read_csv('1984.pdf.pages.csv')
+    document_embeddings = load_embeddings('1984.pdf.embeddings.csv')
     answer, context = answer_query_with_context(question_asked, df, document_embeddings)
 
     project_uuid = '6314e4df'
